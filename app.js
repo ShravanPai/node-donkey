@@ -1,10 +1,24 @@
 const express = require('express')
+var cors = require('cors')
+var bodyParser = require('body-parser')
 const app = express()
-const port = 4000
+const port = 9090
 
-app.get('/', (req, res) => res.send('Hello World!'))
-app.get('/h', (req, res) => {
-    res.send('Hello there oleg')
+// Data structures to store runtime game data
+var gameRoomMap = {}
+
+app.use(cors())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+
+app.get('/donkey/game-rooms', (req, res) => {
+    res.send(gameRoomMap)
+})
+
+app.post('/donkey/game-room', (req, res) => {
+   let roomDetails = req.body
+   gameRoomMap[roomDetails.name] = {name: roomDetails.name, host: roomDetails.host};
+    res.sendStatus(200)
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
