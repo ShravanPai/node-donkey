@@ -1,0 +1,22 @@
+{
+  "name": "donkey",
+  "version": "1.0.0",
+  "description": "Backend server for donkey game",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShravanPai/node-donkey.git"
+  },
+  "author": "shravan.pai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShravanPai/node-donkey/issues"
+  },
+  "homepage": "https://github.com/ShravanPai/node-donkey#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
