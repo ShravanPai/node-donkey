@@ -4,6 +4,9 @@ var bodyParser = require('body-parser')
 const app = express()
 const port = 9090
 
+// App related classes
+var Game = require('./Game');
+
 // Data structures to store runtime game data
 var gameRoomMap = {}
 
@@ -21,4 +24,6 @@ app.post('/donkey/game-room', (req, res) => {
     res.sendStatus(200)
 })
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+// app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+var game = new Game('Shravan', '127.0.0.1');
+app.listen(port, game.initializeGame());
