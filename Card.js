@@ -7,6 +7,14 @@ class Card {
     toString() {
         return this.value + ' Of ' + this.type;
     }
+
+    getType() {
+        return this.type;
+    }
+
+    getValue() {
+        return this.value;
+    }
 }
 
 module.exports = Card;
